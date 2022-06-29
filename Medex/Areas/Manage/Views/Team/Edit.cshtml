@@ -1,0 +1,54 @@
+﻿
+@model Team
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <form asp-action="edit" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="Title" class="form-label">Title</label>
+                    <input asp-for="Title" type="text" class="form-control" id="title">
+                    <span class="text-danger" asp-validation-for="Title"></span>
+
+                </div>
+                <div class="mb-3">
+                    <label for="Desc" class="form-label">Desc</label>
+                    <input asp-for="Desc" class="form-control" id="desc">
+                    <span class="text-danger" asp-validation-for="Desc"></span>
+
+                </div>
+                <div class="mb-3">
+                    <label for="Name" class="form-label">Name</label>
+                    <input asp-for="Name" class="form-control" id="name">
+                    <span class="text-danger" asp-validation-for="Name"></span>
+
+                </div>
+                <div class="mb-3">
+                    <label for="Profession" class="form-label">Profession</label>
+                    <input asp-for="Profession" class="form-control" id="profession">
+                    <span class="text-danger" asp-validation-for="Profession"></span>
+
+                </div>
+                <div class="mb-3">
+                    <label for="Icons" class="form-label">Icons</label>
+                    <input asp-for="Icons" class="form-control" id="icons">
+                    <span class="text-danger" asp-validation-for="Icons"></span>
+
+                </div>
+                <div class="mb-3">
+                    <label asp-for="ImageFiles" class="form-label">ImageFiles</label>
+                    <input asp-for="ImageFiles" class="form-control">
+                    <span class="text-danger" asp-validation-for="ImageFiles"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+        </div>
+
+    </div>
+</div>
+

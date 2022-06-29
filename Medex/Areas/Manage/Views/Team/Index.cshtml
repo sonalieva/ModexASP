@@ -1,0 +1,52 @@
+﻿@model List<Team>
+@{
+    ViewData["Title"] = "Index";
+    int count = 0;
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+            <a asp-action="create" class="btn btn-primary">Create</a>
+        </div>
+        <div class="col-md-12 mx-auto">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Desc</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Profession</th>
+                        <th scope="col">Icons</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var tm in Model)
+                    {
+                        count++;
+                        <tr>
+                            <th scope="row">@count</th>
+                            <td>@tm.Title</td>
+                            <td>@tm.Desc</td>
+                            <td>@tm.Name</td>
+                            <td>@tm.Profession</td>
+                            <td>@tm.Icons</td>
+                            <td>
+                                <img width="100" src="~/uploads/team/@tm.Image">
+                            </td>
+
+                            <td>
+                                <a asp-action="edit" class="btn btn-warning">Edit</a>k
+                                <a asp-action="delete" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
